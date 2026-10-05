@@ -5,12 +5,14 @@ import classnames from 'classnames';
 import { VerticalNavBar, HorizontalNavBar } from 'stremio/components/NavBar';
 import styles from './MainNavBars.less';
 
+// MW Play deliberately keeps addon management out of the customer-facing UI.
+// Addons already synchronized to the signed-in account continue to be consumed
+// by the core; management can be done from another compatible client.
 const TABS = [
     { id: 'board', label: 'Board', icon: 'home', href: '#/' },
     { id: 'discover', label: 'Discover', icon: 'discover', href: '#/discover' },
     { id: 'library', label: 'Library', icon: 'library', href: '#/library' },
     { id: 'calendar', label: 'Calendar', icon: 'calendar', href: '#/calendar' },
-    { id: 'addons', label: 'ADDONS', icon: 'addons', href: '#/addons' },
     { id: 'settings', label: 'SETTINGS', icon: 'settings', href: '#/settings' },
 ];
 
@@ -44,4 +46,3 @@ const MainNavBars = memo(({ className, route, query, children }: Props) => {
 });
 
 export default MainNavBars;
-
