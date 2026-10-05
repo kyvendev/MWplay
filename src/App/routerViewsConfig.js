@@ -43,10 +43,9 @@ const routerViewsConfig = [
         }
     ],
     [
-        {
-            ...routesRegexp.addons,
-            component: routes.Addons
-        },
+        // Addon management is intentionally not exposed by MW Play.
+        // Installed/synchronized addons remain available to the core, while
+        // customers cannot browse, install or uninstall them from this client.
         {
             ...routesRegexp.settings,
             component: routes.Settings
