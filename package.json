@@ -31,7 +31,7 @@
         "langs": "github:Stremio/nodejs-langs",
         "lodash.debounce": "4.0.8",
         "lodash.intersection": "4.4.0",
-        "lodash.isequal": "4.5.1",
+        "lodash.isequal": "4.5.0",
         "lodash.throttle": "4.1.1",
         "magnet-uri": "6.2.0",
         "prop-types": "15.8.1",
