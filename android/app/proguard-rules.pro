@@ -1,0 +1,1 @@
+# MW Play release rules.
