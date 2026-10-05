@@ -1,8 +1,8 @@
 {
-    "name": "stremio",
-    "displayName": "Stremio",
+    "name": "mw-play",
+    "displayName": "MW Play",
     "version": "5.0.0-beta.29",
-    "author": "Smart Code OOD",
+    "author": "MW Play",
     "private": true,
     "license": "gpl-2.0",
     "scripts": {
@@ -31,7 +31,7 @@
         "langs": "github:Stremio/nodejs-langs",
         "lodash.debounce": "4.0.8",
         "lodash.intersection": "4.4.0",
-        "lodash.isequal": "4.5.0",
+        "lodash.isequal": "4.5.1",
         "lodash.throttle": "4.1.1",
         "magnet-uri": "6.2.0",
         "prop-types": "15.8.1",
