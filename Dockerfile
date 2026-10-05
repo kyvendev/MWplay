@@ -1,39 +1,35 @@
-# Stremio Node 20.x
-# the node version for running MW Play Web
+# MW Play Web
+# Keep the runtime aligned with this Stremio Web snapshot.
 ARG NODE_VERSION=20-alpine
 FROM node:$NODE_VERSION AS base
 
-# Setup pnpm
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
-RUN corepack enable
 RUN apk add --no-cache git
+# This repository snapshot has a pnpm v9 lockfile containing an upstream
+# GitHub release tarball without an integrity field. pnpm 11+ intentionally
+# rejects such legacy entries. Pin pnpm 9 for reproducible compatibility with
+# the lockfile instead of weakening pnpm 11's supply-chain protections.
+RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
 
-# Meta
 LABEL Description="MW Play Web" Vendor="MW Play" Version="1.0.0"
 
 RUN mkdir -p /var/www/stremio-web
 WORKDIR /var/www/stremio-web
 
-# Setup app
 FROM base AS app
 
 COPY package.json pnpm-lock.yaml /var/www/stremio-web/
-# The upstream lockfile contains a GitHub-hosted hls.js tarball without an
-# integrity field. Newer pnpm versions reject that entry when frozen, so for
-# this Docker/Vercel build we allow pnpm to refresh the affected resolution.
-RUN pnpm i --no-frozen-lockfile
+RUN pnpm i --frozen-lockfile
 
 COPY . /var/www/stremio-web
 RUN pnpm build
 
-# Setup server
 FROM base AS server
 
 RUN pnpm i express@4
 
-# Finalize
 FROM base
 
 COPY http_server.js /var/www/stremio-web
