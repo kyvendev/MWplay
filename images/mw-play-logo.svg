@@ -1,0 +1,16 @@
+<svg width="720" height="240" viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mw" x1="70" y1="40" x2="390" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A52BFF"/>
+      <stop offset="0.48" stop-color="#6E4CFF"/>
+      <stop offset="1" stop-color="#36C9FF"/>
+    </linearGradient>
+    <linearGradient id="play" x1="385" y1="75" x2="650" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9B35FF"/>
+      <stop offset="1" stop-color="#448BFF"/>
+    </linearGradient>
+  </defs>
+  <path d="M56 178L92 61C98 41 124 37 137 53L184 112L225 54C237 37 264 40 272 60L305 143L339 74C348 55 375 53 387 70L421 117L454 73C467 56 494 61 500 82L522 159L487 170L470 112L437 155C425 171 401 170 390 154L358 111L326 174C315 196 284 194 276 171L243 86L204 141C194 155 173 156 162 142L122 92L91 188L56 178Z" fill="url(#mw)"/>
+  <path d="M526 78L644 120L526 168V78Z" fill="url(#play)"/>
+  <text x="62" y="224" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" letter-spacing="8">MW PLAY</text>
+</svg>
