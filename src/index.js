@@ -17,6 +17,7 @@ const i18n = require('i18next');
 const { initReactI18next } = require('react-i18next');
 const stremioTranslations = require('stremio-translations');
 const App = require('./App');
+require('./mw-play-brand.less');
 
 const translations = Object.fromEntries(Object.entries(stremioTranslations()).map(([key, value]) => [key, {
     translation: value
