@@ -1,0 +1,22 @@
+// MW Play visual layer
+// Kept separate from upstream styles so future upstream merges are easier to maintain.
+
+:global {
+    .mw-play-brand-surface {
+        background: linear-gradient(135deg, #080913 0%, #0c0d1b 55%, #11132a 100%);
+    }
+}
+
+@media (min-width: 900px) {
+    :global(body) {
+        background-attachment: fixed !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :global(*) {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
