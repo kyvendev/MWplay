@@ -5,15 +5,12 @@ import classnames from 'classnames';
 import { VerticalNavBar, HorizontalNavBar } from 'stremio/components/NavBar';
 import styles from './MainNavBars.less';
 
-// MW Play deliberately keeps addon management out of the customer-facing UI.
-// Addons already synchronized to the signed-in account continue to be consumed
-// by the core; management can be done from another compatible client.
+// MW Play keeps content-source management outside the customer-facing client.
 const TABS = [
-    { id: 'board', label: 'Board', icon: 'home', href: '#/' },
-    { id: 'discover', label: 'Discover', icon: 'discover', href: '#/discover' },
-    { id: 'library', label: 'Library', icon: 'library', href: '#/library' },
-    { id: 'calendar', label: 'Calendar', icon: 'calendar', href: '#/calendar' },
-    { id: 'settings', label: 'SETTINGS', icon: 'settings', href: '#/settings' },
+    { id: 'board', label: 'Início', icon: 'home', href: '#/' },
+    { id: 'discover', label: 'Explorar', icon: 'discover', href: '#/discover' },
+    { id: 'library', label: 'Minha Lista', icon: 'library', href: '#/library' },
+    { id: 'calendar', label: 'Calendário', icon: 'calendar', href: '#/calendar' },
 ];
 
 type Props = {
@@ -25,7 +22,7 @@ type Props = {
 
 const MainNavBars = memo(({ className, route, query, children }: Props) => {
     return (
-        <div className={classnames(className, styles['main-nav-bars-container'])}>
+        <div className={classnames(className, styles['main-nav-bars-container'], 'mw-play-shell')}>
             <HorizontalNavBar
                 className={styles['horizontal-nav-bar']}
                 route={route}
@@ -35,11 +32,7 @@ const MainNavBars = memo(({ className, route, query, children }: Props) => {
                 fullscreenButton={true}
                 navMenu={true}
             />
-            <VerticalNavBar
-                className={styles['vertical-nav-bar']}
-                selected={route}
-                tabs={TABS}
-            />
+            <VerticalNavBar className={styles['vertical-nav-bar']} selected={route} tabs={TABS} />
             <div className={styles['nav-content-container']}>{children}</div>
         </div>
     );
