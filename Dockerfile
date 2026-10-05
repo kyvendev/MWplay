@@ -1,5 +1,5 @@
 # Stremio Node 20.x
-# the node version for running Stremio Web
+# the node version for running MW Play Web
 ARG NODE_VERSION=20-alpine
 FROM node:$NODE_VERSION AS base
 
@@ -11,7 +11,7 @@ RUN corepack enable
 RUN apk add --no-cache git
 
 # Meta
-LABEL Description="Stremio Web" Vendor="Smart Code OOD" Version="1.0.0"
+LABEL Description="MW Play Web" Vendor="MW Play" Version="1.0.0"
 
 RUN mkdir -p /var/www/stremio-web
 WORKDIR /var/www/stremio-web
@@ -19,8 +19,11 @@ WORKDIR /var/www/stremio-web
 # Setup app
 FROM base AS app
 
-COPY package.json pnpm-lock.yaml /var/www/stremio-web
-RUN pnpm i --frozen-lockfile
+COPY package.json pnpm-lock.yaml /var/www/stremio-web/
+# The upstream lockfile contains a GitHub-hosted hls.js tarball without an
+# integrity field. Newer pnpm versions reject that entry when frozen, so for
+# this Docker/Vercel build we allow pnpm to refresh the affected resolution.
+RUN pnpm i --no-frozen-lockfile
 
 COPY . /var/www/stremio-web
 RUN pnpm build
