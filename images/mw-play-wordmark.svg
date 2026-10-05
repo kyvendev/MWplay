@@ -1,0 +1,8 @@
+<svg width="1000" height="260" viewBox="0 0 1000 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="g" x1="20" y1="40" x2="940" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#A52BFF"/><stop offset=".48" stop-color="#704BFF"/><stop offset="1" stop-color="#36C9FF"/></linearGradient></defs>
+<rect width="1000" height="260" rx="44" fill="#090A14"/>
+<text x="72" y="160" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-5">MW</text>
+<text x="292" y="160" fill="url(#g)" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-4">PLAY</text>
+<path d="M844 78L936 130L844 182V78Z" fill="url(#g)"/>
+<text x="76" y="218" fill="#B9BDD2" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" letter-spacing="9">SEU MUNDO EM STREAMING</text>
+</svg>
