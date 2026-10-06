@@ -8,7 +8,7 @@
         android:hardwareAccelerated="true"
         android:label="MW Play"
         android:theme="@style/Theme.MWPlay"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="false">
         <activity android:name=".PlayerActivity" android:screenOrientation="sensorLandscape" />
         <activity
             android:name=".MainActivity"
