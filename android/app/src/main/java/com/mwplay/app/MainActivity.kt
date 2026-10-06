@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // The Android shell hosts the MW Play web UI while Media3 handles direct
-        // HTTP(S) media streams that the web player exposes to the media element.
-        webView.loadUrl("https://m-wplay.vercel.app")
+        // Hosted MW Play preview currently used for Android testing.
+        // Media3 handles direct HTTP(S) media streams exposed by the web player.
+        webView.loadUrl("https://m-wplay-n8r2az57r-kyvendev.vercel.app/#/")
     }
 
     private fun installNativePlayerHook(view: WebView) {
